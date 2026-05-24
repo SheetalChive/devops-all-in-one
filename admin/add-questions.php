@@ -46,74 +46,15 @@ alert('Question Added Successfully');
 
 <title>Add Questions</title>
 
-<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="../css/main.css">
 
-<style>
-
-.form-box{
-max-width:700px;
-margin:120px auto;
-background:#0f172a;
-padding:40px;
-border-radius:20px;
-box-shadow:0 0 20px rgba(0,0,0,0.5);
-}
-
-.form-box h1{
-margin-bottom:30px;
-text-align:center;
-}
-
-.form-group{
-margin-bottom:20px;
-}
-
-.form-group label{
-display:block;
-margin-bottom:10px;
-font-weight:600;
-}
-
-.form-group select,
-.form-group textarea{
-width:100%;
-padding:15px;
-border:none;
-border-radius:10px;
-background:#1e293b;
-color:white;
-font-size:15px;
-}
-
-.form-group textarea{
-height:140px;
-resize:none;
-}
-
-.submit-btn{
-width:100%;
-padding:15px;
-border:none;
-border-radius:10px;
-background:linear-gradient(90deg,#06b6d4,#2563eb);
-color:white;
-font-size:16px;
-font-weight:600;
-cursor:pointer;
-transition:0.3s;
-}
-
-.submit-btn:hover{
-transform:translateY(-3px);
-}
-
-</style>
+<link rel="stylesheet" href="../css/qna.css">
 
 </head>
 
 <body>
 
-<?php include "navbar.php"; ?>
+<?php include "../navbar.php"; ?>
 
 <div class="form-box">
 

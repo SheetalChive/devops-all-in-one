@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DevOps Knowledge Hub</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/main.css">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<div class="logo">
+
+<div class="logo-circle">
+D
+</div>
+
+<div>
+<h2>DevOps Hub</h2>
+</div>
+
+</div>
+
+<div class="nav-links">
+
+<a href="#">Home</a>
+<a href="#">Roadmap</a>
+<a href="#">Tools</a>
+<a href="#">Interview Q&A</a>
+<a href="resume.php">Articles</a>
+<a href="#">Contact</a>
+
+</div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h1>DevOps Knowledge Hub</h1>
+
+<p>
+Learn DevOps tools, interview questions,
+real-world concepts, CI/CD pipelines,
+Kubernetes, Docker, Terraform and much more.
+Click any tool card to explore questions & answers.
+</p>
+
+</div>
+
+<div class="hero-image">
+
+<div class="orbit orbit1"></div>
+<div class="orbit orbit2"></div>
+<div class="orbit orbit3"></div>
+
+<div class="devops-circle">
+∞
+</div>
+
+</div>
+
+</section>
+
+<!-- TOOLS -->
+
+<section class="tools-section" id="toolsSection">
+
+<h2 class="section-title">
+Popular DevOps Tools
+</h2>
+
+<div class="tools-grid">
+
+<div class="tool-card" onclick="openTool('Docker')">
+
+<img src="https://cdn-icons-png.flaticon.com/512/919/919853.png">
+
+<h3>Docker</h3>
+
+<p>Containerization Platform</p>
+
+<span class="qa-count">65 Questions</span>
+
+</div>
+
+<div class="tool-card" onclick="openTool('Kubernetes')">
+
+<img src="https://cdn-icons-png.flaticon.com/512/919/919836.png">
+
+<h3>Kubernetes</h3>
+
+<p>Container Orchestration</p>
+
+<span class="qa-count">80 Questions</span>
+
+</div>
+
+<div class="tool-card" onclick="openTool('Jenkins')">
+
+<img src="https://cdn-icons-png.flaticon.com/512/919/919854.png">
+
+<h3>Jenkins</h3>
+
+<p>CI/CD Automation</p>
+
+<span class="qa-count">50 Questions</span>
+
+</div>
+
+<div class="tool-card" onclick="openTool('Terraform')">
+
+<img src="https://cdn-icons-png.flaticon.com/512/873/873120.png">
+
+<h3>Terraform</h3>
+
+<p>Infrastructure as Code</p>
+
+<span class="qa-count">45 Questions</span>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- DETAILS PAGE -->
+
+<section class="details-page" id="detailsPage">
+
+<button class="back-btn" onclick="goBack()">
+← Back to Tools
+</button>
+
+<div class="details-box">
+
+<h2 id="toolTitle">Docker</h2>
+
+<p id="toolDescription">
+Docker description
+</p>
+
+<div id="qaContainer"></div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+© 2026 DevOps Knowledge Hub |
+Designed for DevOps Engineers
+</p>
+
+</footer>
+
+<script>
+
+const toolData = {
+
+Docker: {
+
+description:
+'Docker is a containerization platform that helps developers package and deploy applications.',
+
+questions: [
+
+{
+q:'What is Docker?',
+a:'Docker is a platform used to build, run and manage containers.'
+},
+
+{
+q:'What is Docker Image?',
+a:'Docker image is a blueprint used to create containers.'
+},
+
+{
+q:'What is Docker Container?',
+a:'Container is a running instance of Docker image.'
+}
+
+]
+
+},
+
+Kubernetes: {
+
+description:
+'Kubernetes automates deployment and management of containers.',
+
+questions: [
+
+{
+q:'What is Kubernetes?',
+a:'Kubernetes is a container orchestration platform.'
+},
+
+{
+q:'What is Pod?',
+a:'Pod is the smallest deployable unit in Kubernetes.'
+}
+
+]
+
+},
+
+Jenkins: {
+
+description:
+'Jenkins is a CI/CD automation tool.',
+
+questions: [
+
+{
+q:'What is Jenkins?',
+a:'Jenkins automates build and deployment pipelines.'
+},
+
+{
+q:'What is Jenkins Pipeline?',
+a:'Pipeline is a series of automated CI/CD stages.'
+}
+
+]
+
+},
+
+Terraform: {
+
+description:
+'Terraform is Infrastructure as Code tool.',
+
+questions: [
+
+{
+q:'What is Terraform?',
+a:'Terraform automates infrastructure provisioning using code.'
+},
+
+{
+q:'What is State File?',
+a:'Terraform state file stores infrastructure state.'
+}
+
+]
+
+}
+
+};
+
+function openTool(toolName){
+
+document.getElementById('toolsSection').style.display='none';
+
+document.getElementById('detailsPage').style.display='block';
+
+document.getElementById('toolTitle').innerText=toolName;
+
+document.getElementById('toolDescription').innerText=
+toolData[toolName].description;
+
+const qaContainer=
+document.getElementById('qaContainer');
+
+qaContainer.innerHTML='';
+
+toolData[toolName].questions.forEach(item=>{
+
+qaContainer.innerHTML += `
+
+<div class="qa-item">
+
+<h4>${item.q}</h4>
+
+<p>${item.a}</p>
+
+</div>
+
+`;
+
+});
+
+}
+
+function goBack(){
+
+document.getElementById('toolsSection').style.display='block';
+
+document.getElementById('detailsPage').style.display='none';
+
+}
+
+</script>
+
+</body>
+</html>

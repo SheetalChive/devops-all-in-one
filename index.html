@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Sheetal Chive | DevOps Engineer</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Segoe UI, sans-serif;
+background:linear-gradient(135deg,#020617,#0f172a,#020617);
+color:white;
+display:flex;
+}
+ul{
+padding-left:20px;
+}
+
+li{
+margin-bottom:8px;
+}
+
+a{
+text-decoration:none;
+color:cyan;
+}
+
+a:hover{
+text-decoration:none;
+color:white;
+}
+/* ---------- Sidebar ---------- */
+
+aside{
+width:260px;
+min-height:100vh;
+background:linear-gradient(180deg,#020617,#1e293b);
+padding:20px;
+box-shadow:0 0 20px black;
+animation:slide 1s;
+}
+
+@keyframes slide{
+from{transform:translateX(-100%)}
+to{transform:translateX(0)}
+}
+
+.profile{
+text-align:center;
+}
+
+.profile img{
+width:130px;
+border-radius:50%;
+border:3px solid cyan;
+box-shadow:0 0 20px cyan;
+}
+
+h2{
+text-align:center;
+color:#38bdf8;
+margin:10px 0;
+}
+
+aside p{
+text-align:center;
+color:#94a3b8;
+}
+
+nav ul{
+list-style:none;
+padding:0;
+margin-top:20px;
+}
+
+nav li{
+margin:10px 0;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+display:block;
+padding:8px;
+border-radius:6px;
+transition:0.3s;
+}
+
+nav a:hover{
+background:cyan;
+color:black;
+box-shadow:0 0 10px cyan;
+}
+
+.resume-btn{
+display:block;
+margin-top:20px;
+text-align:center;
+background:linear-gradient(90deg,cyan,blue);
+padding:8px;
+border-radius:6px;
+color:black;
+font-weight:bold;
+text-decoration:none;
+}
+
+/* ---------- Main ---------- */
+
+main{
+flex:1;
+padding:30px;
+animation:fade 1.5s;
+}
+
+@keyframes fade{
+from{opacity:0}
+to{opacity:1}
+}
+
+section{
+margin-bottom:40px;
+padding:20px;
+border-radius:12px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(8px);
+box-shadow:0 0 10px black;
+transition:0.3s;
+}
+
+section:hover{
+transform:scale(1.02);
+box-shadow:0 0 20px cyan;
+}
+
+h2{
+color:#38bdf8;
+}
+
+/* ---------- Skills ---------- */
+
+.skills{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+}
+
+.skills span{
+background:linear-gradient(90deg,cyan,blue);
+padding:6px 12px;
+border-radius:20px;
+font-size:14px;
+font-weight:bold;
+color:black;
+}
+
+/* ---------- Cards ---------- */
+
+.card{
+/* background:#020617; */
+padding:15px;
+border-radius:8px;
+margin-top:10px;
+/* border:1px solid #334155; */
+}
+
+/* ---------- Button ---------- */
+
+button{
+background:linear-gradient(90deg,cyan,blue);
+border:none;
+padding:8px 15px;
+cursor:pointer;
+border-radius:6px;
+font-weight:bold;
+margin-top:10px;
+}
+
+button:hover{
+box-shadow:0 0 10px cyan;
+}
+
+a{color:cyan}
+
+@media(max-width:768px){
+
+body{flex-direction:column}
+
+aside{width:100%}
+
+}
+
+</style>
+
+</head>
+<body>
+
+
+<!-- Sidebar -->
+
+<aside>
+
+<div class="profile">
+
+<img src="photo.jpg" width="150" style="border-radius:50%">
+
+</div>
+
+<h2>Sheetal Chive</h2>
+<p>DevOps | AWS | Terraform | Docker | CI/CD</p>
+
+<nav>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#tools">Tools</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#cert">Certifications</a></li>
+<li><a href="#achieve">Achievements</a></li>
+<li><a href="#edu">Education</a></li>
+<li><a href="#learn">Learning</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<a class="resume-btn" onclick="openCV()">Download Resume</a>
+
+</aside>
+
+
+<!-- Main -->
+
+<main>
+
+
+<section id="about">
+
+<h2>Professional Summary</h2>
+
+<p>
+
+DevOps Engineer with 3+ years of experience in backend development and cloud infrastructure.
+Skilled in AWS, Docker, Terraform, CI/CD, and Linux.
+Passionate about automation, scalability, and reliable cloud systems.
+Looking for DevOps / Cloud Engineer opportunities.
+
+</p>
+
+</section>
+
+
+<section id="skills">
+
+<h2>Skills</h2>
+
+<div class="skills">
+
+<span>AWS</span>
+<span>Docker</span>
+<span>Terraform</span>
+<span>Linux</span>
+<span>Git</span>
+<span>GitHub Actions</span>
+<span>Jenkins</span>
+<span>CI/CD</span>
+<span>EC2</span>
+<span>RDS</span>
+<span>VPC</span>
+
+</div>
+
+</section>
+
+
+<section id="tools">
+
+<h2>Tools & Technologies</h2>
+
+<div class="card">
+
+Cloud : AWS, EC2, RDS, S3, VPC  
+DevOps : Docker, Terraform, GitHub Actions, Jenkins  
+OS : Linux  
+Web : Apache, Nginx, PHP, Drupal  
+Database : MySQL  
+Version Control : Git, GitHub  
+
+</div>
+
+</section>
+
+
+<section id="experience">
+
+<h2>Experience</h2>
+
+<div class="card">
+
+GE Vernova
+
+• Managed AWS infrastructure  
+• Created CI/CD pipeline  
+• Worked on Drupal apps  
+• Deployed on EC2  
+• Configured Load Balancer  
+• Created secure VPC  
+
+</div>
+
+</section>
+
+
+<section id="projects">
+
+<h2>DevOps Projects</h2>
+
+<ul>
+
+<li>
+AWS 3 Tier Architecture – Deployed scalable infrastructure using EC2, RDS, ALB
+</li>
+
+<li>
+CI/CD Pipeline using GitHub Actions – Automated deployment using workflow
+</li>
+
+<li>
+Portfolio Website – Hosted on GitHub Pages
+</li>
+
+</ul>
+
+<br>
+
+<b>Portfolio:</b><br>
+
+<a href="https://sheetalchive.github.io/GithubActions/index.html" target="_blank">
+https://sheetalchive.github.io/GithubActions/index.html
+</a>
+
+</section>
+
+
+<section id="cert">
+
+<h2>Certifications</h2>
+
+<div class="card">
+
+AWS Cloud Practitioner (Learning)  
+Terraform Basics  
+Docker Fundamentals  
+Linux Essentials  
+
+</div>
+
+</section>
+
+
+<section id="achieve">
+
+<h2>Achievements</h2>
+
+<div class="card">
+
+• Deployed AWS 3 tier architecture  
+• Created CI/CD pipeline  
+• Automated deployment  
+• Managed production apps  
+
+</div>
+
+</section>
+
+
+<section id="edu">
+
+<h2>Education</h2>
+
+<div class="card">
+
+Bachelor Degree in Computer Science
+
+</div>
+
+</section>
+
+
+<section id="learn">
+
+<h2>Currently Learning</h2>
+
+<div class="card">
+
+Kubernetes  
+Advanced Terraform  
+AWS DevOps  
+Monitoring Tools  
+
+</div>
+
+</section>
+
+
+<section id="contact">
+
+<h2>Contact</h2>
+
+<p>Email :  <a href="sheetalchive13@gmail.com" target="_blank">
+sheetalchive13@gmail.com
+</a></p>
+
+<p>GitHub : <a href="github.com/sheetalchive" target="_blank">
+github.com/sheetalchive
+</a></p>
+
+<p>LinkedIn : <a href="linkedin.com" target="_blank">
+linkedin.com
+</a></p>
+
+<p>Portfolio :<a href="https://sheetalchive.github.io/GithubActions/index.html" target="_blank">
+https://sheetalchive.github.io/GithubActions/index.html
+</a> </p>
+
+
+</section>
+
+
+</main>
+
+
+<script>
+
+function openPDF(){
+window.open("3_tier_structure_with_RDS_and_autoscalling.pdf")
+}
+
+function openCV(){
+window.open("SheetalChiveResume.pdf")
+}
+
+</script>
+
+</body>
+</html>

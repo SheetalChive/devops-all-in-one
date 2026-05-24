@@ -13,7 +13,7 @@
 
   <div class="nav-links">
 
-    <a href="#">Home</a>
+    <a href="index.php">Home</a>
     <a href="#">Roadmap</a>
     <a href="#">Tools</a>
     <a href="#">Interview Q&A</a>

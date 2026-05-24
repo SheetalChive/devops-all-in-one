@@ -91,8 +91,7 @@ Popular DevOps Tools
 
 <div class="tools-grid">
 
-<a href="qna/docker.php" class="tool-link">
-
+    <a href="/devops-all-in-one/qna/tool.php?tool=Docker" class="tool-link">
 <div class="tool-card">
 
 <img src="https://cdn-icons-png.flaticon.com/512/919/919853.png">
@@ -108,7 +107,7 @@ Popular DevOps Tools
 </a>
 
 
-<a href="qna/k8s.php" class="tool-link">
+<a href="/devops-all-in-one/qna/tool.php?tool=Kubernetes" class="tool-link">
 
 <div class="tool-card">
 
@@ -124,7 +123,7 @@ Popular DevOps Tools
 </a>
 
 
-<a href="qna/docker.php" class="tool-link">
+<a href="/devops-all-in-one/qna/tool.php?tool=Jenkins" class="tool-link">
 
 <div class="tool-card">
 
@@ -140,7 +139,7 @@ Popular DevOps Tools
 
 </a>
 
-<a href="qna/docker.php" class="tool-link">
+<a href="/devops-all-in-one/qna/tool.php?tool=Terraform" class="tool-link">
 
 <div class="tool-card">
 

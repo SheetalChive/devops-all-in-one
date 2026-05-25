@@ -1,9 +1,17 @@
 <?php
 
+// $conn = mysqli_connect(
+// "localhost",
+// "root",
+// "",
+// "devops_hub"
+// );
+
+
 $conn = mysqli_connect(
-"localhost",
+"mysql",
 "root",
-"",
+"root",
 "devops_hub"
 );
 
@@ -46,9 +54,9 @@ alert('Question Added Successfully');
 
 <title>Add Questions</title>
 
-<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="/css/main.css">
 
-<link rel="stylesheet" href="../css/qna.css">
+<link rel="stylesheet" href="/css/qna.css">
 
 </head>
 

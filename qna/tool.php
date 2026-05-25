@@ -8,20 +8,26 @@
 
 <title>Interview Questions</title>
 
-<link rel="stylesheet" href="../css/main.css">
-<link rel="stylesheet" href="../css/qna.css">
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/qna.css">
 
 </head>
 
 <body>
 
 <?php
+// $conn = mysqli_connect(
+// "localhost",
+// "root",
+// "",
+// "devops_hub"
+// );
 
 $conn = mysqli_connect(
-"localhost",
-"root",
-"",
-"devops_hub"
+    "mysql",
+    "root",
+    "root",
+    "devops_hub"
 );
 
 /* GET TOOL NAME */

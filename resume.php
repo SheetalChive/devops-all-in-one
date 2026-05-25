@@ -23,8 +23,8 @@ DevOps Portfolio
 
 <div class="nav-right">
 
-  <a href="/devops-all-in-one/index.php">Home</a>
-  a href="/devops-all-in-one/resume.php">Resume</a>
+  <a href="/index.php">Home</a>
+  <a href="/resume.php">Resume</a>
 
 </div>
 

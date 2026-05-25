@@ -13,9 +13,9 @@
 
   <div class="nav-links">
 
-    <a href="/devops-all-in-one/index.php">Home</a>
+    <a href="/index.php">Home</a>
  
-    <a href="/devops-all-in-one/resume.php">Resume</a>
+    <a href="/resume.php">Resume</a>
   
 
   </div>

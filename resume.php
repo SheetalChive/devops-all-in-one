@@ -23,10 +23,8 @@ DevOps Portfolio
 
 <div class="nav-right">
 
-<a href="#about">About</a>
-<a href="#skills">Skills</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
+  <a href="/devops-all-in-one/index.php">Home</a>
+  a href="/devops-all-in-one/resume.php">Resume</a>
 
 </div>
 

@@ -13,12 +13,10 @@
 
   <div class="nav-links">
 
-    <a href="index.php">Home</a>
-    <a href="#">Roadmap</a>
-    <a href="#">Tools</a>
-    <a href="#">Interview Q&A</a>
-    <a href="resume.php">Resume</a>
-    <a href="#">Contact</a>
+    <a href="/devops-all-in-one/index.php">Home</a>
+ 
+    <a href="/devops-all-in-one/resume.php">Resume</a>
+  
 
   </div>
 

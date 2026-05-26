@@ -1,6 +1,5 @@
 <?php include "../config/db.php"; ?>
 <?php
-
 // Save Question
 
 if(isset($_POST['submit'])) {
@@ -12,7 +11,7 @@ if(isset($_POST['submit'])) {
     $question = addslashes($_POST['question']);
 
     // $answer = addslashes($_POST['answer']);
-$answer = mysqli_real_escape_string(
+    $answer = mysqli_real_escape_string(
     $conn,
     $_POST['answer']
 );
@@ -77,7 +76,6 @@ content="width=device-width, initial-scale=1.0">
 
 <!-- CKEditor -->
 
-<script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
 
 <!-- CKEditor Fix -->
 
@@ -91,8 +89,9 @@ content="width=device-width, initial-scale=1.0">
 
     color: #000000 !important;
 
-    min-height: 300px;
+    min-height: 400px;
 
+    color: black !important;
 }
 
 /* Toolbar */
@@ -206,64 +205,58 @@ Save Question
 
 <!-- CKEditor Script -->
 
+<script src="https://cdn.ckeditor.com/ckeditor5/41.4.2/classic/ckeditor.js"></script>
 <script>
 
 let editorInstance;
 
-ClassicEditor
-.create(document.querySelector('#editor'), {
+ClassicEditor.create(document.querySelector('#editor'), {
 
-    toolbar: [
+    toolbar: {
+        items: [
+            'heading','|',
+            'bold','italic','underline','strikethrough','|',
+            'fontSize','fontColor','fontBackgroundColor','|',
+            'alignment','|',
+            'bulletedList','numberedList','|',
+            'outdent','indent','|',
+            'link','blockQuote','insertTable','mediaEmbed','|',
+            'imageUpload','|',
+            'undo','redo',
+          
 
-        'heading',
+        ]
+    },
 
-        '|',
+    image: {
+        toolbar: [
+            'imageTextAlternative',
+            'imageStyle:inline',
+            'imageStyle:block',
+            'imageStyle:side'
+        ]
+    },
 
-        'bold',
-        'italic',
-        'underline',
-
-        '|',
-
-        'bulletedList',
-        'numberedList',
-
-        '|',
-
-        'link',
-        'blockQuote',
-        'insertTable',
-
-        '|',
-
-        'undo',
-        'redo'
-
-    ]
+    table: {
+        contentToolbar: [
+            'tableColumn',
+            'tableRow',
+            'mergeTableCells'
+        ]
+    }
 
 })
-
 .then(editor => {
 
-    editorInstance = editor;
+editorInstance = editor;
 
-    console.log('CKEditor Loaded Successfully');
+console.log("Advanced CKEditor Loaded ✅");
 
 })
 
 .catch(error => {
 
-    console.error(error);
-
-});
-
-// Form Submit Fix
-
-document.querySelector('form').addEventListener('submit', function() {
-
-    document.querySelector('#editor').value =
-    editorInstance.getData();
-
+console.error(error);
 });
 
 </script>

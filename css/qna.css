@@ -268,3 +268,17 @@ transform:translateY(-3px);
     box-shadow: 0 0 8px rgba(0,123,255,0.2);
 
 }
+
+/* 🔥 TICK MARK STYLE */
+.done-icon{
+    display:none;
+    color:white;          /* dark black */
+    font-weight:900;     /* bold */
+    font-size:16px;
+    margin-left:10px;
+}
+
+/* show tick when read */
+.qa-item.read .done-icon{
+    display:inline;
+}

@@ -40,42 +40,22 @@ Top <?php echo $tool." "; ?> interview questions and answers.
 </p>
 
 <!-- BUTTONS -->
-
 <div class="question-buttons">
 
-<button onclick="showQuestions('basic')">
-Basic Questions
-</button>
-
-<button onclick="showQuestions('advanced')">
-Advanced Questions
-</button>
-
-<button onclick="showQuestions('scenario')">
-Scenario Based Questions
-</button>
-
-<button onclick="showQuestions('basic-mcq')">
-Basic MCQ
-</button>
-
-<button onclick="showQuestions('advanced-mcq')">
-Advanced MCQ
-</button>
+<button onclick="showQuestions('basic')">Basic Questions</button>
+<button onclick="showQuestions('advanced')">Advanced Questions</button>
+<button onclick="showQuestions('scenario')">Scenario Based Questions</button>
+<button onclick="showQuestions('basic-mcq')">Basic MCQ</button>
+<button onclick="showQuestions('advanced-mcq')">Advanced MCQ</button>
 
 </div>
 
-<!-- BASIC -->
-
+<!-- ================= BASIC ================= -->
 <div id="basic" class="question-section active">
 
 <?php
-$sql = "SELECT * FROM questions
-WHERE tool_name='$tool'
-AND question_type='Basic'";
-
+$sql = "SELECT * FROM questions WHERE tool_name='$tool' AND question_type='Basic'";
 $result = mysqli_query($conn,$sql);
-
 $count = 1;
 
 while($row = mysqli_fetch_assoc($result)){
@@ -101,17 +81,12 @@ while($row = mysqli_fetch_assoc($result)){
 
 </div>
 
-<!-- ADVANCED -->
-
+<!-- ================= ADVANCED ================= -->
 <div id="advanced" class="question-section">
 
 <?php
-$sql = "SELECT * FROM questions
-WHERE tool_name='$tool'
-AND question_type='Advanced'";
-
+$sql = "SELECT * FROM questions WHERE tool_name='$tool' AND question_type='Advanced'";
 $result = mysqli_query($conn,$sql);
-
 $count = 1;
 
 while($row = mysqli_fetch_assoc($result)){
@@ -128,7 +103,7 @@ while($row = mysqli_fetch_assoc($result)){
 </h3>
 
 <p class="answer">
-<?php echo $row['answer']; ?>
+<?php echo stripslashes($row['answer']); ?>
 </p>
 
 </div>
@@ -137,17 +112,12 @@ while($row = mysqli_fetch_assoc($result)){
 
 </div>
 
-<!-- SCENARIO -->
-
+<!-- ================= SCENARIO ================= -->
 <div id="scenario" class="question-section">
 
 <?php
-$sql = "SELECT * FROM questions
-WHERE tool_name='$tool'
-AND question_type='Scenario Based'";
-
+$sql = "SELECT * FROM questions WHERE tool_name='$tool' AND question_type='Scenario Based'";
 $result = mysqli_query($conn,$sql);
-
 $count = 1;
 
 while($row = mysqli_fetch_assoc($result)){
@@ -164,7 +134,7 @@ while($row = mysqli_fetch_assoc($result)){
 </h3>
 
 <p class="answer">
-<?php echo $row['answer']; ?>
+<?php echo stripslashes($row['answer']); ?>
 </p>
 
 </div>
@@ -311,34 +281,68 @@ Save Exam
 
 </div>
 
+
 </section>
 
 <script>
 
 function showQuestions(sectionId){
 
-const sections =
-document.querySelectorAll('.question-section');
+const sections = document.querySelectorAll('.question-section');
 
 sections.forEach(section => {
-section.classList.remove('active');
+    section.classList.remove('active');
 });
 
 document.getElementById(sectionId).classList.add('active');
 
 }
 
+// 🔥 TOGGLE ANSWER + MARK READ
 function toggleAnswer(element){
 
 let answer = element.nextElementSibling;
 
 if(answer.style.display === "block"){
-answer.style.display = "none";
-}else{
-answer.style.display = "block";
+    answer.style.display = "none";
+} else {
+    answer.style.display = "block";
+    markRead(element);
 }
 
 }
+// 🔥 MARK AS READ
+function markRead(element){
+
+let text = element.querySelector(".question-text").innerText;
+
+element.parentElement.classList.add("read");
+
+let list = JSON.parse(localStorage.getItem("read_questions") || "[]");
+
+if(!list.includes(text)){
+    list.push(text);
+    localStorage.setItem("read_questions", JSON.stringify(list));
+}
+
+}
+
+// 🔥 RESTORE ON PAGE LOAD
+window.addEventListener("load", function(){
+
+let list = JSON.parse(localStorage.getItem("read_questions") || "[]");
+
+document.querySelectorAll(".qa-item").forEach(item => {
+
+    let text = item.querySelector(".question-text")?.innerText;
+
+    if(list.includes(text)){
+        item.classList.add("read");
+    }
+
+});
+
+});
 
 </script>
 

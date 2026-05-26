@@ -1,22 +1,5 @@
+<?php include "../config/db.php"; ?>
 <?php
-// $conn = mysqli_connect(
-//     "localhost",
-//     "root",
-//     "",
-//     "devops_hub"
-// );
-
-$conn = mysqli_connect(
-    "mysql",
-    "root",
-    "root",
-    "devops_hub"
-);
-if(!$conn){
-
-    die("DB Connection Failed");
-
-}
 
 
 /* Form Data */

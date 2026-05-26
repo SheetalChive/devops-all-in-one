@@ -8,30 +8,15 @@
 
 <title>Interview Questions</title>
 
-<link rel="stylesheet" href="/css/main.css">
-<link rel="stylesheet" href="/css/qna.css">
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../css/qna.css">
 
 </head>
 
 <body>
 
-<?php
-// $conn = mysqli_connect(
-// "localhost",
-// "root",
-// "",
-// "devops_hub"
-// );
-
-$conn = mysqli_connect(
-    "mysql",
-    "root",
-    "root",
-    "devops_hub"
-);
-
-/* GET TOOL NAME */
-
+<?php 
+include "../config/db.php"; 
 $tool = $_GET['tool'];
 
 ?>
@@ -106,9 +91,9 @@ while($row = mysqli_fetch_assoc($result)){
 <span class="done-icon">✓</span>
 </h3>
 
-<p class="answer">
-<?php echo $row['answer']; ?>
-</p>
+<div class="answer">
+<?php echo stripslashes($row['answer']); ?>
+</div>
 
 </div>
 

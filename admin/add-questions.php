@@ -1,62 +1,125 @@
+<?php include "../config/db.php"; ?>
 <?php
 
-// $conn = mysqli_connect(
-// "localhost",
-// "root",
-// "",
-// "devops_hub"
-// );
+// Save Question
 
+if(isset($_POST['submit'])) {
 
-$conn = mysqli_connect(
-"mysql",
-"root",
-"root",
-"devops_hub"
+    $tool =addslashes($_POST['tool']);
+
+    $type = addslashes($_POST['question_type']);
+
+    $question = addslashes($_POST['question']);
+
+    // $answer = addslashes($_POST['answer']);
+$answer = mysqli_real_escape_string(
+    $conn,
+    $_POST['answer']
 );
 
-if(isset($_POST['submit'])){
+    $sql = "INSERT INTO questions
+    (
+        tool_name,
+        question_type,
+        question,
+        answer
+    )
 
-$tool =
-$_POST['tool'];
+    VALUES
+    (
+        '$tool',
+        '$type',
+        '$question',
+        '$answer'
+    )";
 
-$type =
-$_POST['question_type'];
+    $run = mysqli_query($conn, $sql);
 
-$question =
-$_POST['question'];
+    if ($run) {
 
-$answer =
-$_POST['answer'];
+        echo "
+        <script>
+        alert('Question Added Successfully');
 
-$sql = "INSERT INTO questions
-(tool_name,question_type,question,answer)
+        window.location.href='';
 
-VALUES
-('$tool','$type','$question','$answer')";
+        </script>
+        ";
 
-mysqli_query($conn,$sql);
+    } else {
 
-echo "
-<script>
-alert('Question Added Successfully');
-</script>
-";
+        echo "
+        <script>
+        alert('Failed To Save Question');
+        </script>
+        ";
 
+        echo mysqli_error($conn);
+    }
 }
 
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+<meta charset="UTF-8">
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>Add Questions</title>
 
-<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="../css/main.css">
 
-<link rel="stylesheet" href="/css/qna.css">
+<link rel="stylesheet" href="../css/qna.css">
+
+<!-- CKEditor -->
+
+<script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+
+<!-- CKEditor Fix -->
+
+<style>
+
+/* CKEditor Typing Area */
+
+.ck-editor__editable {
+
+    background: #ffffff !important;
+
+    color: #000000 !important;
+
+    min-height: 300px;
+
+}
+
+/* Toolbar */
+
+.ck.ck-toolbar {
+
+    background: #f3f4f6 !important;
+
+}
+
+/* Border */
+
+.ck.ck-editor__main>.ck-editor__editable {
+
+    border: 1px solid #d1d5db !important;
+
+}
+
+/* Placeholder */
+
+.ck.ck-editor__main>.ck-editor__editable.ck-placeholder::before {
+
+    color: #6b7280 !important;
+
+}
+
+</style>
 
 </head>
 
@@ -68,7 +131,8 @@ alert('Question Added Successfully');
 
 <h1>Add Interview Question</h1>
 
-<form method="POST">
+<form method="POST" enctype="multipart/form-data">
+<!-- Tool -->
 
 <div class="form-group">
 
@@ -87,6 +151,7 @@ alert('Question Added Successfully');
 </select>
 
 </div>
+<!-- Question Type -->
 
 <div class="form-group">
 
@@ -102,27 +167,29 @@ alert('Question Added Successfully');
 
 </div>
 
+<!-- Question -->
+
 <div class="form-group">
 
 <label>Question</label>
 
 <textarea
 name="question"
-required>
-</textarea>
+required></textarea>
 
 </div>
+<!-- Answer -->
 
 <div class="form-group">
 
 <label>Answer</label>
 
 <textarea
-name="answer"
-required>
-</textarea>
+id="editor"
+name="answer"></textarea>
 
 </div>
+<!-- Submit -->
 
 <button
 type="submit"
@@ -136,6 +203,70 @@ Save Question
 </form>
 
 </div>
+
+<!-- CKEditor Script -->
+
+<script>
+
+let editorInstance;
+
+ClassicEditor
+.create(document.querySelector('#editor'), {
+
+    toolbar: [
+
+        'heading',
+
+        '|',
+
+        'bold',
+        'italic',
+        'underline',
+
+        '|',
+
+        'bulletedList',
+        'numberedList',
+
+        '|',
+
+        'link',
+        'blockQuote',
+        'insertTable',
+
+        '|',
+
+        'undo',
+        'redo'
+
+    ]
+
+})
+
+.then(editor => {
+
+    editorInstance = editor;
+
+    console.log('CKEditor Loaded Successfully');
+
+})
+
+.catch(error => {
+
+    console.error(error);
+
+});
+
+// Form Submit Fix
+
+document.querySelector('form').addEventListener('submit', function() {
+
+    document.querySelector('#editor').value =
+    editorInstance.getData();
+
+});
+
+</script>
 
 </body>
 </html>
